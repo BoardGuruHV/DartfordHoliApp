@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-holi-pink: #E91E63;
+  --color-holi-purple: #9C27B0;
+  --color-holi-orange: #FF9800;
+  --color-holi-yellow: #FFEB3B;
+  --color-holi-bg: #1a0a2e;
+  --color-holi-surface: #2d1b4e;
+  --color-holi-surface-light: #3d2b5e;
+  --font-sans: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-poppins), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #1a0a2e;
+  --foreground: #f0e6ff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(45, 27, 78, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #E91E63, #FF9800, #FFEB3B, #9C27B0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Colour splash animation */
+@keyframes splash {
+  0% { transform: scale(0) rotate(0deg); opacity: 0.8; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.4; }
+  100% { transform: scale(1.5) rotate(360deg); opacity: 0; }
+}
+
+.animate-splash {
+  animation: splash 3s ease-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Bottom nav spacing */
+main {
+  padding-bottom: 5rem;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

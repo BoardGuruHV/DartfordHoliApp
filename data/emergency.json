@@ -1,0 +1,34 @@
+{
+  "firstAid": {
+    "location": "Near the Main Entrance (look for the Red Cross tent)",
+    "description": "Qualified first aiders are on site throughout the event."
+  },
+  "emergencyNumber": "999",
+  "nonEmergencyNumber": "111",
+  "nearestHospital": {
+    "name": "Darent Valley Hospital",
+    "address": "Darenth Wood Road, Dartford DA2 8DA",
+    "phone": "01322 428100",
+    "distance": "1.5 miles from venue"
+  },
+  "eventSecurity": {
+    "phone": "07700 900123",
+    "description": "On-site security team. Find them near any entrance or flag a volunteer."
+  },
+  "safetyTips": [
+    "Keep colour powder away from eyes and mouth. If irritation occurs, rinse with water.",
+    "Stay hydrated — free water stations are located around the venue.",
+    "Wear clothes you don't mind getting colourful! White is traditional.",
+    "Keep valuables in sealed zip-lock bags to protect from colour powder.",
+    "Apply coconut oil or sunscreen to exposed skin before play — makes cleanup easier.",
+    "Supervise children at all times during colour throwing.",
+    "If you feel unwell, visit the First Aid tent near the Main Entrance immediately.",
+    "Know your exits — there are entrances/exits on the north and south sides of the park."
+  ],
+  "waterStations": [
+    "Main Entrance Area",
+    "Near Food Court",
+    "Activity Zone (East Side)",
+    "Main Stage (West Side)"
+  ]
+}

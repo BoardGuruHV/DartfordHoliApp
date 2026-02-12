@@ -1,0 +1,54 @@
+[
+  {
+    "id": "f1",
+    "name": "Spice Garden",
+    "description": "Authentic North Indian street food with a modern twist.",
+    "cuisine": "Indian Street Food",
+    "items": [
+      { "name": "Samosa Chaat", "price": "£4.50", "dietary": ["vegetarian"], "description": "Crispy samosas with chickpea curry, chutneys & yoghurt" },
+      { "name": "Chicken Tikka Wrap", "price": "£6.00", "dietary": ["halal"], "description": "Tandoori chicken tikka in a soft naan wrap" },
+      { "name": "Paneer Tikka Wrap", "price": "£5.50", "dietary": ["vegetarian"], "description": "Grilled paneer with peppers in a naan wrap" },
+      { "name": "Mango Lassi", "price": "£3.00", "dietary": ["vegetarian"], "description": "Sweet & creamy mango yoghurt drink" }
+    ],
+    "location": "Food Court - Stall 1"
+  },
+  {
+    "id": "f2",
+    "name": "Chai & Chaat Corner",
+    "description": "Traditional chai and beloved Indian snacks.",
+    "cuisine": "Indian Snacks & Beverages",
+    "items": [
+      { "name": "Masala Chai", "price": "£2.50", "dietary": ["vegetarian"], "description": "Authentic spiced tea" },
+      { "name": "Pani Puri", "price": "£3.50", "dietary": ["vegetarian", "vegan"], "description": "Crispy shells with spiced water & potato filling" },
+      { "name": "Bhel Puri", "price": "£3.50", "dietary": ["vegetarian", "vegan"], "description": "Puffed rice with chutneys, onions & sev" },
+      { "name": "Gulab Jamun", "price": "£3.00", "dietary": ["vegetarian"], "description": "Warm milk dumplings in rose-cardamom syrup" }
+    ],
+    "location": "Food Court - Stall 2"
+  },
+  {
+    "id": "f3",
+    "name": "Tandoori Flames",
+    "description": "Fresh from the tandoor — kebabs, tikkas, and more.",
+    "cuisine": "Tandoori & Grill",
+    "items": [
+      { "name": "Seekh Kebab Roll", "price": "£6.50", "dietary": ["halal"], "description": "Spiced lamb kebab in paratha with salad" },
+      { "name": "Tandoori Chicken (Quarter)", "price": "£5.00", "dietary": ["halal", "gluten-free"], "description": "Classic tandoori chicken with mint chutney" },
+      { "name": "Veg Seekh Kebab", "price": "£4.50", "dietary": ["vegetarian", "vegan"], "description": "Grilled vegetable kebabs with chutney" },
+      { "name": "Naan Bread", "price": "£1.50", "dietary": ["vegetarian"], "description": "Freshly baked in the tandoor" }
+    ],
+    "location": "Food Court - Stall 3"
+  },
+  {
+    "id": "f4",
+    "name": "Sweet Treats",
+    "description": "Traditional Indian sweets and desserts.",
+    "cuisine": "Desserts & Sweets",
+    "items": [
+      { "name": "Jalebi", "price": "£3.00", "dietary": ["vegetarian"], "description": "Hot crispy spirals soaked in saffron syrup" },
+      { "name": "Kulfi (Mango/Pistachio)", "price": "£3.50", "dietary": ["vegetarian", "nut-free"], "description": "Traditional Indian ice cream" },
+      { "name": "Ras Malai", "price": "£3.50", "dietary": ["vegetarian"], "description": "Soft cheese dumplings in saffron milk" },
+      { "name": "Barfi Selection", "price": "£4.00", "dietary": ["vegetarian"], "description": "Assorted milk fudge pieces" }
+    ],
+    "location": "Food Court - Stall 4"
+  }
+]

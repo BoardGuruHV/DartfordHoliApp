@@ -1,0 +1,10 @@
+[
+  { "id": "v1", "name": "Priya Sharma", "role": "Festival Director", "zone": "All Areas" },
+  { "id": "v2", "name": "Raj Patel", "role": "Stage Manager", "zone": "Main Stage" },
+  { "id": "v3", "name": "Aisha Khan", "role": "Food Court Lead", "zone": "Food Court" },
+  { "id": "v4", "name": "David Chen", "role": "Safety Officer", "zone": "All Areas" },
+  { "id": "v5", "name": "Sunita Gupta", "role": "Volunteer Coordinator", "zone": "Info Desk" },
+  { "id": "v6", "name": "James Wilson", "role": "Car Park Marshall", "zone": "Car Park" },
+  { "id": "v7", "name": "Meera Joshi", "role": "Activities Lead", "zone": "Activity Zone" },
+  { "id": "v8", "name": "Tom Brown", "role": "Sound & AV", "zone": "Main Stage" }
+]

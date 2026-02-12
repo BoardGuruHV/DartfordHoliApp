@@ -1,0 +1,14 @@
+[
+  { "id": "m1", "label": "Main Stage", "type": "stage", "x": 50, "y": 30, "description": "All performances and ceremonies" },
+  { "id": "m2", "label": "Main Entrance", "type": "entrance", "x": 50, "y": 90, "description": "Entry & exit, colour powder distribution" },
+  { "id": "m3", "label": "Food Court", "type": "food", "x": 75, "y": 55, "description": "All food stalls located here" },
+  { "id": "m4", "label": "First Aid", "type": "first-aid", "x": 55, "y": 85, "description": "Medical assistance & first aid" },
+  { "id": "m5", "label": "Toilets", "type": "toilet", "x": 25, "y": 70, "description": "Portable toilets & accessible facilities" },
+  { "id": "m6", "label": "Water Station 1", "type": "water", "x": 45, "y": 85, "description": "Free drinking water" },
+  { "id": "m7", "label": "Water Station 2", "type": "water", "x": 70, "y": 45, "description": "Free drinking water" },
+  { "id": "m8", "label": "Info Desk", "type": "info", "x": 50, "y": 80, "description": "Information, lost & found, accessibility" },
+  { "id": "m9", "label": "Activity Zone", "type": "stage", "x": 25, "y": 45, "description": "Kids' activities, henna, workshops" },
+  { "id": "m10", "label": "Colour Play Area", "type": "stage", "x": 50, "y": 55, "description": "Main colour throwing area" },
+  { "id": "m11", "label": "Prayer Room", "type": "prayer", "x": 15, "y": 30, "description": "Quiet space for prayer" },
+  { "id": "m12", "label": "Car Park", "type": "parking", "x": 50, "y": 98, "description": "Central Park car park" }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a1",
+    "time": "10:30",
+    "title": "Welcome to Dartford Holi Festival!",
+    "message": "Gates are now open! Collect your free colour powder at the entrance. Have an amazing time!",
+    "priority": "important",
+    "category": "general"
+  },
+  {
+    "id": "a2",
+    "time": "11:25",
+    "title": "First Colour Throw in 5 minutes!",
+    "message": "Head to the open area for the first big colour throw at 11:30. Get your powder ready!",
+    "priority": "important",
+    "category": "schedule"
+  },
+  {
+    "id": "a3",
+    "time": "12:00",
+    "title": "Stay Hydrated!",
+    "message": "It's warming up! Free water stations are available near the entrance, food court, and both sides of the arena.",
+    "priority": "normal",
+    "category": "safety"
+  }
+]
