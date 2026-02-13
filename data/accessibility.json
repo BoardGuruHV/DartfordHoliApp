@@ -1,0 +1,76 @@
+{
+  "intro": "We want everyone to enjoy the Dartford Holi Festival. Here's what we've arranged to make the event accessible and comfortable for all.",
+  "sections": [
+    {
+      "icon": "♿",
+      "title": "Wheelchair & Mobility Access",
+      "items": [
+        "The Open Air Theatre at Central Park has level access from the main entrance on Park Road",
+        "Accessible parking spaces are available in the car park closest to the entrance — arrive early as spaces are limited",
+        "Hard-standing pathways connect the main stage, food court, and facilities",
+        "Grass areas may be uneven — our volunteers can assist with navigation",
+        "An accessible viewing area is reserved near the front of the main stage"
+      ]
+    },
+    {
+      "icon": "🦻",
+      "title": "Hearing & Deaf Access",
+      "items": [
+        "A BSL (British Sign Language) interpreter will be present for the opening and closing ceremonies",
+        "Key announcements will be posted on the announcement board near the Information Tent",
+        "Staff at the Information Tent can assist with written communication",
+        "Our MC will use clear, facing-the-audience speech patterns during announcements"
+      ]
+    },
+    {
+      "icon": "👁️",
+      "title": "Visual Impairment",
+      "items": [
+        "Sighted guide volunteers are available — ask at the Information Tent",
+        "Guide dogs are welcome at the event (we recommend protective eyewear for them during colour play)",
+        "Large-print programmes are available at the entrance",
+        "Audio descriptions of key events will be available on request"
+      ]
+    },
+    {
+      "icon": "🧘",
+      "title": "Quiet Zone & Sensory Needs",
+      "items": [
+        "A designated quiet zone is located in the garden area behind the food court, away from speakers",
+        "If you need a break from noise or crowds, volunteers can guide you there",
+        "Ear defenders are available to borrow from the Information Tent",
+        "The colour play area is clearly marked — you can enjoy the festival without entering it"
+      ]
+    },
+    {
+      "icon": "🚻",
+      "title": "Accessible Facilities",
+      "items": [
+        "Accessible portable toilets are located near the main entrance and the food court",
+        "Baby changing facilities are available at the Information Tent",
+        "Drinking water points are at ground level and accessible",
+        "Seating is available throughout the venue — look for the bench areas on the map"
+      ]
+    },
+    {
+      "icon": "🅿️",
+      "title": "Getting Here",
+      "items": [
+        "Blue Badge parking is available in the Central Park car park off Park Road",
+        "Dartford station is a 15-minute walk — level route via Park Road",
+        "If you need transport assistance, contact the event team in advance via the website",
+        "Drop-off point available at the Park Road entrance for those needing closer access"
+      ]
+    },
+    {
+      "icon": "🆘",
+      "title": "Need Help?",
+      "items": [
+        "All volunteer marshals (yellow vests) are trained to assist visitors with accessibility needs",
+        "The Information Tent near the entrance is your first point of contact",
+        "First Aid staff can provide medical assistance at any time",
+        "If you have specific accessibility requirements, please contact us before the event so we can prepare"
+      ]
+    }
+  ]
+}

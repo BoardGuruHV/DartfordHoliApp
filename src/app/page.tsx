@@ -3,6 +3,8 @@ import { CountdownTimer } from "@/components/home/CountdownTimer";
 import { NowUpNext } from "@/components/home/NowUpNext";
 import { QuickNav } from "@/components/home/QuickNav";
 import { InstallPrompt } from "@/components/home/InstallPrompt";
+import { WeatherWidget } from "@/components/home/WeatherWidget";
+import { HydrationReminder } from "@/components/home/HydrationReminder";
 import { SchedulePreview } from "@/components/home/SchedulePreview";
 import { AnnouncementsPreview } from "@/components/home/AnnouncementsPreview";
 import { FoodPreview } from "@/components/home/FoodPreview";
@@ -18,8 +20,10 @@ export default function HomePage() {
       <HeroBanner />
       <CountdownTimer />
       <NowUpNext />
+      <WeatherWidget />
       <InstallPrompt />
       <QuickNav />
+      <HydrationReminder />
       <SchedulePreview />
       <AnnouncementsPreview />
       <MapPreview />
@@ -30,8 +34,10 @@ export default function HomePage() {
       {/* More links */}
       <div className="px-4 py-4 grid grid-cols-2 gap-3">
         {[
+          { href: "/about-holi", icon: "🪔", label: "Story of Holi" },
           { href: "/colour-safety", icon: "🎨", label: "Colour Safety" },
           { href: "/checklist", icon: "✅", label: "Preparation Checklist" },
+          { href: "/accessibility", icon: "♿", label: "Accessibility" },
           { href: "/volunteers", icon: "👥", label: "Volunteers" },
           { href: "/gallery", icon: "📸", label: "Photo Gallery" },
           { href: "/faq", icon: "❓", label: "FAQ" },

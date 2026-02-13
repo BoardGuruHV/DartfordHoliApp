@@ -31,9 +31,81 @@ function StarRating({ value, onChange, label }: { value: number; onChange: (v: n
   );
 }
 
+const STARS = ["", "⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
+
+function formatFeedbackText(entries: FeedbackEntry[]): string {
+  if (entries.length === 0) return "No feedback submitted yet.";
+
+  return entries
+    .map((entry, i) => {
+      const date = new Date(entry.timestamp).toLocaleString();
+      return [
+        `--- Feedback #${i + 1} (${date}) ---`,
+        `Overall: ${STARS[entry.overallRating]} (${entry.overallRating}/5)`,
+        entry.entertainmentRating ? `Entertainment: ${STARS[entry.entertainmentRating]} (${entry.entertainmentRating}/5)` : null,
+        entry.foodRating ? `Food & Drink: ${STARS[entry.foodRating]} (${entry.foodRating}/5)` : null,
+        entry.organizationRating ? `Organisation: ${STARS[entry.organizationRating]} (${entry.organizationRating}/5)` : null,
+        entry.comments ? `Comments: ${entry.comments}` : null,
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n\n");
+}
+
+function FeedbackExport({ feedback }: { feedback: FeedbackEntry[] }) {
+  const [copied, setCopied] = useState(false);
+
+  const feedbackText = formatFeedbackText(feedback);
+  const subject = encodeURIComponent("Dartford Holi Festival 2025 — Feedback");
+  const body = encodeURIComponent(feedbackText);
+  const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(feedbackText);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback for older browsers
+      const textarea = document.createElement("textarea");
+      textarea.value = feedbackText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  if (feedback.length === 0) return null;
+
+  return (
+    <Card className="border-white/10">
+      <h3 className="text-sm font-semibold mb-2">Share Your Feedback</h3>
+      <p className="text-xs text-white/50 mb-3">Send your feedback to the organisers or save a copy.</p>
+      <div className="flex gap-2">
+        <a
+          href={mailtoLink}
+          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-holi-purple/30 border border-holi-purple/30 text-sm font-medium hover:bg-holi-purple/40 transition-colors"
+        >
+          📧 Email
+        </a>
+        <button
+          onClick={handleCopy}
+          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 transition-colors"
+        >
+          {copied ? "✅ Copied!" : "📋 Copy"}
+        </button>
+      </div>
+    </Card>
+  );
+}
+
 export default function FeedbackPage() {
   const [submitted, setSubmitted] = useLocalStorage("holi-feedback-submitted", false);
-  const [, setFeedback] = useLocalStorage<FeedbackEntry[]>("holi-feedback", []);
+  const [feedback, setFeedback] = useLocalStorage<FeedbackEntry[]>("holi-feedback", []);
 
   const [overall, setOverall] = useState(0);
   const [entertainment, setEntertainment] = useState(0);
@@ -63,11 +135,18 @@ export default function FeedbackPage() {
     return (
       <div>
         <PageHeader title="Feedback" />
-        <div className="px-4 text-center py-12">
-          <span className="text-5xl block mb-4">🙏</span>
-          <h2 className="text-2xl font-bold gradient-text">Thank You!</h2>
-          <p className="text-white/60 mt-2">Your feedback has been saved. We appreciate it!</p>
-          <Button className="mt-6" onClick={() => setSubmitted(false)}>Submit Another</Button>
+        <div className="px-4 space-y-4">
+          <div className="text-center py-8">
+            <span className="text-5xl block mb-4">🙏</span>
+            <h2 className="text-2xl font-bold gradient-text">Thank You!</h2>
+            <p className="text-white/60 mt-2">Your feedback has been saved. We appreciate it!</p>
+          </div>
+
+          <FeedbackExport feedback={feedback} />
+
+          <div className="text-center">
+            <Button onClick={() => setSubmitted(false)}>Submit Another</Button>
+          </div>
         </div>
       </div>
     );

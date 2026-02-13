@@ -1,0 +1,46 @@
+{
+  "intro": "Holi is about joy, not discomfort. Please follow these simple guidelines so everyone has an amazing time.",
+  "principles": [
+    {
+      "icon": "✋",
+      "title": "Ask Before You Throw",
+      "description": "Always check before throwing colour at someone. Some people prefer to watch rather than participate in colour play, and that's perfectly okay."
+    },
+    {
+      "icon": "🚫",
+      "title": "Respect 'No'",
+      "description": "If someone says no or signals they don't want colour thrown at them, respect their wishes immediately. No means no — no exceptions."
+    },
+    {
+      "icon": "👶",
+      "title": "Be Gentle with Children",
+      "description": "Use only small amounts of colour with young children. Avoid throwing colour near their eyes or face. Let parents guide how their children participate."
+    },
+    {
+      "icon": "📸",
+      "title": "Ask Before Photographing",
+      "description": "Always ask permission before taking photos or videos of others, especially children. Not everyone wants to appear on social media."
+    },
+    {
+      "icon": "👁️",
+      "title": "Avoid the Face",
+      "description": "Aim colour at the body, not the face. Be especially careful around eyes, mouth, and nose. If colour gets in someone's eyes, help them rinse with clean water immediately."
+    },
+    {
+      "icon": "🤝",
+      "title": "Include Everyone",
+      "description": "Holi is for everyone regardless of age, background, or ability. Welcome newcomers warmly and explain traditions to first-timers."
+    },
+    {
+      "icon": "🧹",
+      "title": "Clean Up After Yourself",
+      "description": "Help keep Central Park beautiful. Dispose of colour packets and food waste in the bins provided. Leave the venue as you found it."
+    },
+    {
+      "icon": "🍺",
+      "title": "Stay Sober & Safe",
+      "description": "This is a family-friendly event. Excessive alcohol consumption is discouraged. Look out for one another and report any concerns to event marshals."
+    }
+  ],
+  "emergencyNote": "If you witness or experience any unwanted behaviour, please speak to any volunteer marshal (wearing yellow vests) or visit the Information Tent near the Main Entrance."
+}

@@ -1,0 +1,48 @@
+{
+  "intro": "Holi is one of the most vibrant and joyous festivals in the world — a celebration of colour, love, and the triumph of good over evil. Here's the story behind the colours.",
+  "sections": [
+    {
+      "title": "The Legend of Holika & Prahlad",
+      "icon": "🔥",
+      "content": "The festival takes its name from Holika, the sister of the demon king Hiranyakashipu. When the king's son Prahlad refused to worship his father and instead remained devoted to Lord Vishnu, the king ordered Holika — who had a boon of fire immunity — to sit in a blazing fire with Prahlad on her lap. But the boon only worked if Holika entered the fire alone. Prahlad emerged unharmed while Holika perished. The bonfire lit on the eve of Holi (Holika Dahan) celebrates this victory of devotion and goodness over evil."
+    },
+    {
+      "title": "Radha & Krishna — The Colours of Love",
+      "icon": "💙",
+      "content": "The playful throwing of colours is inspired by the legend of Lord Krishna and Radha. Young Krishna, who had dark blue skin, was jealous of Radha's fair complexion. His mother Yashoda playfully suggested he colour Radha's face with any colour he liked. This mischievous act of love became the tradition of smearing friends, family, and strangers with vibrant gulal (coloured powder) and pichkaris (water guns). On Holi, everyone is equal — colour erases all differences."
+    },
+    {
+      "title": "What Do the Colours Mean?",
+      "icon": "🎨",
+      "colours": [
+        { "colour": "Red", "hex": "#E91E63", "meaning": "Love, fertility, and the joy of marriage" },
+        { "colour": "Yellow", "hex": "#FFEB3B", "meaning": "Turmeric — health, vitality, and the spice of life" },
+        { "colour": "Blue", "hex": "#2196F3", "meaning": "Krishna — the divine, the infinite sky" },
+        { "colour": "Green", "hex": "#4CAF50", "meaning": "Spring, new beginnings, and harvest" },
+        { "colour": "Orange", "hex": "#FF9800", "meaning": "Optimism, energy, and warmth of fire" },
+        { "colour": "Purple", "hex": "#9C27B0", "meaning": "Royalty, magic, and spiritual awakening" },
+        { "colour": "Pink", "hex": "#E91E63", "meaning": "Compassion, harmony, and inner peace" }
+      ]
+    },
+    {
+      "title": "When Is Holi Celebrated?",
+      "icon": "📅",
+      "content": "Holi falls on the full moon day (Purnima) of the Hindu month Phalguna, which typically lands in March. It marks the arrival of spring and the end of winter. The night before is Holika Dahan (the bonfire), and the main day of colour play is called Dhulandi or Rangwali Holi."
+    },
+    {
+      "title": "How Is Holi Celebrated?",
+      "icon": "🎉",
+      "content": "On the morning of Holi, people gather in open areas, streets, and parks armed with dry colour powders (gulal) and water colours. Music, dancing, and drums fill the air. Traditional drinks like thandai (a spiced milk drink) and sweets like gujiya are shared. The phrase \"Bura na mano, Holi hai!\" (Don't mind, it's Holi!) echoes everywhere — a reminder that on this day, all pranks are forgiven."
+    },
+    {
+      "title": "Holi Around the World",
+      "icon": "🌍",
+      "content": "While Holi originates in India and Nepal, it's now celebrated worldwide as a festival of joy, unity, and diversity. From London to Los Angeles, Sydney to São Paulo, communities come together to throw colours, dance to music, and celebrate the spirit of togetherness — just like we're doing right here in Dartford!"
+    },
+    {
+      "title": "Holi in Dartford",
+      "icon": "🏛️",
+      "content": "The Dartford Holi Festival brings the magic of this ancient tradition to Central Park. Our celebration combines authentic cultural elements — colour play, music, dance, and food — with a family-friendly community atmosphere. Whether you've celebrated Holi your whole life or this is your first time, you're part of the family today. Welcome!"
+    }
+  ]
+}
