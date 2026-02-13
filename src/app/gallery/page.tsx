@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
+import { ShareButton } from "@/components/ui/ShareButton";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { generateId } from "@/lib/utils";
 import type { GalleryPhoto } from "@/types";
@@ -90,7 +91,12 @@ export default function GalleryPage() {
               <span className="text-xs text-white/50">
                 {new Date(selectedPhoto.timestamp).toLocaleString()}
               </span>
-              <Button
+              <div className="flex items-center gap-2">
+                <ShareButton
+                  title="Holi Festival Photo"
+                  text="Check out this photo from the Dartford Holi Festival! 🎨"
+                />
+                <Button
                 variant="danger"
                 size="sm"
                 onClick={() => {
@@ -100,6 +106,7 @@ export default function GalleryPage() {
               >
                 Delete
               </Button>
+              </div>
             </div>
           </div>
         )}

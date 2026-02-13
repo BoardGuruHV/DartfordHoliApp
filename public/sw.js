@@ -1,10 +1,12 @@
-const CACHE_NAME = "holi-fest-v1";
+const CACHE_NAME = "holi-fest-v2";
 const STATIC_ASSETS = [
   "/",
   "/schedule",
   "/map",
   "/food",
   "/emergency",
+  "/colour-safety",
+  "/checklist",
   "/announcements",
   "/volunteers",
   "/sponsors",

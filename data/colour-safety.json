@@ -1,0 +1,89 @@
+{
+  "intro": "We use only certified organic, non-toxic colour powders made from cornstarch and food-grade dyes. Here's how to enjoy the colours safely.",
+  "sections": [
+    {
+      "title": "About Our Colours",
+      "icon": "🎨",
+      "items": [
+        "All colours are certified organic and non-toxic",
+        "Made from cornstarch and food-grade dyes",
+        "Colours wash out of most fabrics — but we recommend wearing clothes you don't mind staining",
+        "Free colour powder packets available at the entrance (limited supply)"
+      ]
+    },
+    {
+      "title": "Eye Protection",
+      "icon": "👓",
+      "items": [
+        "Wear sunglasses during colour throws for best protection",
+        "If colour gets in your eyes, rinse immediately with cold clean water for at least 15 minutes",
+        "Do NOT rub your eyes — this can cause irritation",
+        "If irritation persists, visit the First Aid tent immediately",
+        "Consider wearing contact lenses with sunglasses, or switch to glasses for the day"
+      ]
+    },
+    {
+      "title": "Skin Protection",
+      "icon": "🧴",
+      "items": [
+        "Apply coconut oil or moisturiser to exposed skin BEFORE the event — this creates a barrier and makes cleanup much easier",
+        "Apply sunscreen (SPF 30+) generously — you'll be outdoors for hours",
+        "If you have sensitive skin or eczema, apply a thicker layer of barrier cream",
+        "Colour may stain nails — apply a clear coat of nail polish beforehand if desired"
+      ]
+    },
+    {
+      "title": "Breathing & Respiratory",
+      "icon": "😷",
+      "items": [
+        "During intense colour throws, use a scarf or bandana to cover your nose and mouth",
+        "If you have asthma, carry your inhaler and stay on the edges of colour zones",
+        "If you experience difficulty breathing, move to fresh air immediately and visit First Aid",
+        "Children should be supervised closely during colour throws"
+      ]
+    },
+    {
+      "title": "Protecting Your Phone & Valuables",
+      "icon": "📱",
+      "items": [
+        "Put your phone in a zip-lock bag — it still works through the plastic!",
+        "Leave expensive jewellery, watches, and electronics at home or in your car",
+        "Bring a small sealed bag for your wallet, keys, and cards",
+        "Waterproof phone pouches are available at the Info Desk"
+      ]
+    },
+    {
+      "title": "What to Wear",
+      "icon": "👕",
+      "items": [
+        "White or light-coloured clothes are traditional — and show colours beautifully!",
+        "Wear old clothes that you don't mind getting permanently colourful",
+        "Closed-toe shoes are recommended (avoid sandals — slippery when wet)",
+        "Avoid silk, satin, and other delicate fabrics",
+        "Bring a change of clothes for the journey home"
+      ]
+    },
+    {
+      "title": "Children's Safety",
+      "icon": "👶",
+      "items": [
+        "Supervise children at all times during colour throws",
+        "Apply extra barrier cream/oil to children's skin",
+        "Sunglasses are especially recommended for little ones",
+        "The Kids' Activity Zone is a gentler colour play area",
+        "Ensure children stay hydrated — they may forget to drink when having fun!"
+      ]
+    },
+    {
+      "title": "After the Festival",
+      "icon": "🚿",
+      "items": [
+        "Rinse off colour with lukewarm water first — hot water can set the colour",
+        "Use oil (coconut, olive, or baby oil) on stubborn colour patches before washing",
+        "Shampoo hair 2-3 times — a clarifying shampoo works best",
+        "Moisturise skin after washing to prevent dryness",
+        "Most colours fade within 1-2 washes from skin, 2-3 washes from hair"
+      ]
+    }
+  ]
+}

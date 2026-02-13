@@ -1,20 +1,78 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { mapMarkers } from "@/lib/data";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { MARKER_ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import type { MapMarker } from "@/types";
 
+const markerTypes = ["all", "stage", "food", "water", "toilet", "first-aid", "info", "entrance", "parking", "prayer"] as const;
+
+// Map marker types to linked pages
+const markerLinks: Record<string, string> = {
+  food: "/food",
+  "first-aid": "/emergency",
+  info: "/lost-found",
+};
+
 export default function MapPage() {
+  return (
+    <Suspense fallback={<div className="px-4 py-8 text-center text-white/40">Loading map...</div>}>
+      <MapContent />
+    </Suspense>
+  );
+}
+
+function MapContent() {
+  const searchParams = useSearchParams();
   const [selected, setSelected] = useState<MapMarker | null>(null);
+  const [typeFilter, setTypeFilter] = useState<string>("all");
+
+  // Handle deep link from schedule (?highlight=Main Stage)
+  useEffect(() => {
+    const highlight = searchParams.get("highlight");
+    if (highlight) {
+      const marker = mapMarkers.find(
+        (m) => m.label.toLowerCase().includes(highlight.toLowerCase()) ||
+               highlight.toLowerCase().includes(m.label.toLowerCase())
+      );
+      if (marker) {
+        setSelected(marker);
+      }
+    }
+  }, [searchParams]);
+
+  const filteredMarkers = typeFilter === "all"
+    ? mapMarkers
+    : mapMarkers.filter((m) => m.type === typeFilter);
 
   return (
     <div>
       <PageHeader title="Venue Map" subtitle="Open Air Theatre, Central Park" />
 
       <div className="px-4">
+        {/* Type filter */}
+        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-3">
+          {markerTypes.map((type) => (
+            <button
+              key={type}
+              onClick={() => { setTypeFilter(type); setSelected(null); }}
+              className={cn(
+                "px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors min-h-[36px] flex items-center gap-1.5",
+                typeFilter === type
+                  ? "bg-holi-pink text-white"
+                  : "bg-holi-surface text-white/60 hover:text-white"
+              )}
+            >
+              {type !== "all" && <span className="text-base">{MARKER_ICONS[type]}</span>}
+              <span>{type === "all" ? "All" : type.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase())}</span>
+            </button>
+          ))}
+        </div>
+
         {/* Map container */}
         <div className="relative glass-card rounded-2xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
           {/* Background representing the park */}
@@ -36,7 +94,7 @@ export default function MapPage() {
           </div>
 
           {/* Markers */}
-          {mapMarkers.map((marker) => (
+          {filteredMarkers.map((marker) => (
             <button
               key={marker.id}
               className={cn(
@@ -58,15 +116,23 @@ export default function MapPage() {
 
         {/* Selected marker info */}
         {selected && (
-          <div className="glass-card rounded-2xl p-4 mt-3 animate-in fade-in">
+          <div className="glass-card rounded-2xl p-4 mt-3">
             <div className="flex items-center gap-3">
               <span className="text-2xl">{MARKER_ICONS[selected.type]}</span>
-              <div>
+              <div className="flex-1">
                 <h3 className="font-semibold">{selected.label}</h3>
                 {selected.description && (
                   <p className="text-white/60 text-sm mt-0.5">{selected.description}</p>
                 )}
               </div>
+              {markerLinks[selected.type] && (
+                <Link
+                  href={markerLinks[selected.type]}
+                  className="text-holi-pink text-sm font-medium hover:underline shrink-0"
+                >
+                  View &rarr;
+                </Link>
+              )}
             </div>
           </div>
         )}

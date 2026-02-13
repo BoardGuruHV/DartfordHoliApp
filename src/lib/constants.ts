@@ -25,6 +25,8 @@ export const ALL_SECTIONS = [
   { label: "Map", href: "/map", icon: "map" },
   { label: "Food", href: "/food", icon: "utensils" },
   { label: "Emergency", href: "/emergency", icon: "shield" },
+  { label: "Colour Safety", href: "/colour-safety", icon: "heart" },
+  { label: "Checklist", href: "/checklist", icon: "star" },
   { label: "Announcements", href: "/announcements", icon: "megaphone" },
   { label: "Volunteers", href: "/volunteers", icon: "users" },
   { label: "Sponsors", href: "/sponsors", icon: "heart" },

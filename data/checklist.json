@@ -1,0 +1,50 @@
+{
+  "sections": [
+    {
+      "title": "What to Wear",
+      "items": [
+        { "id": "c1", "text": "White or light-coloured old clothes" },
+        { "id": "c2", "text": "Closed-toe shoes (no sandals)" },
+        { "id": "c3", "text": "Sunglasses for eye protection" },
+        { "id": "c4", "text": "Scarf or bandana for nose/mouth" }
+      ]
+    },
+    {
+      "title": "What to Bring",
+      "items": [
+        { "id": "c5", "text": "Reusable water bottle" },
+        { "id": "c6", "text": "Zip-lock bags for phone & valuables" },
+        { "id": "c7", "text": "Small towel or wet wipes" },
+        { "id": "c8", "text": "Change of clothes for the journey home" },
+        { "id": "c9", "text": "Cash & cards in a sealed pouch" },
+        { "id": "c10", "text": "Sunscreen (SPF 30+)" }
+      ]
+    },
+    {
+      "title": "Skin & Hair Prep",
+      "items": [
+        { "id": "c11", "text": "Apply coconut oil or moisturiser to skin" },
+        { "id": "c12", "text": "Apply sunscreen generously" },
+        { "id": "c13", "text": "Oil your hair (makes colour removal easier)" },
+        { "id": "c14", "text": "Clear nail polish (protects nails from staining)" }
+      ]
+    },
+    {
+      "title": "Leave Behind",
+      "items": [
+        { "id": "c15", "text": "Expensive jewellery & watches" },
+        { "id": "c16", "text": "Nice clothes or white trainers you want to keep clean" },
+        { "id": "c17", "text": "Unnecessary electronics" }
+      ]
+    },
+    {
+      "title": "Know Before You Go",
+      "items": [
+        { "id": "c18", "text": "Saved this app to your home screen" },
+        { "id": "c19", "text": "Checked the schedule for highlight times" },
+        { "id": "c20", "text": "Know where First Aid tent is (Main Entrance)" },
+        { "id": "c21", "text": "Told someone where you'll be" }
+      ]
+    }
+  ]
+}

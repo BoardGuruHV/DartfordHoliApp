@@ -1,8 +1,8 @@
 [
-  { "id": "sp1", "name": "Dartford Borough Council", "tier": "platinum", "description": "Supporting community events across Dartford" },
-  { "id": "sp2", "name": "Kent Arts Foundation", "tier": "gold", "description": "Promoting arts and culture in Kent" },
-  { "id": "sp3", "name": "Spice Village Restaurant", "tier": "silver", "description": "Authentic Indian cuisine in Dartford High Street" },
-  { "id": "sp4", "name": "Bluewater Shopping Centre", "tier": "silver", "description": "Premier shopping destination in Kent" },
+  { "id": "sp1", "name": "Dartford Borough Council", "tier": "platinum", "description": "Supporting community events across Dartford", "website": "https://www.dartford.gov.uk" },
+  { "id": "sp2", "name": "Kent Arts Foundation", "tier": "gold", "description": "Promoting arts and culture in Kent", "website": "https://www.kentarts.org.uk" },
+  { "id": "sp3", "name": "Spice Village Restaurant", "tier": "silver", "description": "Authentic Indian cuisine in Dartford High Street", "website": "https://www.spicevillage.co.uk" },
+  { "id": "sp4", "name": "Bluewater Shopping Centre", "tier": "silver", "description": "Premier shopping destination in Kent", "website": "https://www.bluewater.co.uk" },
   { "id": "sp5", "name": "Dartford Hindu Association", "tier": "community", "description": "Serving the Hindu community in Dartford" },
   { "id": "sp6", "name": "Kent Equality Cohesion Council", "tier": "community", "description": "Promoting equality and community cohesion" }
 ]

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { DIETARY_COLORS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import type { FoodStall, DietaryLabel } from "@/types";
 
 const allDietary: DietaryLabel[] = ["vegetarian", "vegan", "gluten-free", "halal", "nut-free", "dairy-free"];
@@ -88,7 +89,13 @@ function StallCard({
           <div>
             <h3 className="font-semibold text-lg">{stall.name}</h3>
             <p className="text-holi-orange text-sm">{stall.cuisine}</p>
-            <p className="text-white/50 text-xs mt-1">{stall.location}</p>
+            <Link
+                href={`/map?highlight=${encodeURIComponent("Food Court")}`}
+                className="text-white/50 text-xs mt-1 hover:text-holi-pink transition-colors underline decoration-dotted inline-block"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {stall.location}
+              </Link>
           </div>
           <svg
             className={cn("w-5 h-5 text-white/40 shrink-0 transition-transform mt-1", isExpanded && "rotate-180")}

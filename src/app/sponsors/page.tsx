@@ -35,11 +35,28 @@ export default function SponsorsPage() {
                 {tierSponsors.map((sponsor) => (
                   <Card key={sponsor.id} className={`bg-gradient-to-b ${tierColors[tier]}`}>
                     <div className={tier === "platinum" ? "text-center py-2" : ""}>
+                      {/* Sponsor initial avatar */}
+                      <div className={`${tier === "platinum" ? "w-16 h-16 text-2xl mx-auto mb-3" : "w-10 h-10 text-base mb-2"} rounded-full bg-white/10 flex items-center justify-center font-bold`}>
+                        {sponsor.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                      </div>
                       <h3 className={`font-semibold ${tier === "platinum" ? "text-lg" : "text-sm"}`}>
                         {sponsor.name}
                       </h3>
                       {sponsor.description && (
                         <p className="text-white/50 text-xs mt-1">{sponsor.description}</p>
+                      )}
+                      {sponsor.website && (
+                        <a
+                          href={sponsor.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs mt-2 text-holi-pink hover:underline"
+                        >
+                          Visit Website
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
                       )}
                     </div>
                   </Card>
