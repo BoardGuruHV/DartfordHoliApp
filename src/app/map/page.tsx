@@ -2,7 +2,7 @@
 
 import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { mapMarkers } from "@/lib/data";
+import { mapMarkers, volunteers } from "@/lib/data";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { MARKER_ICONS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -18,6 +18,31 @@ const markerLinks: Record<string, string> = {
   info: "/lost-found",
 };
 
+// Colour zone overlays
+const colourZones = [
+  {
+    id: "colour-zone",
+    label: "Colour Play Zone",
+    colour: "bg-holi-pink/15 border-holi-pink/40",
+    top: "42%", left: "20%", width: "60%", height: "20%",
+    icon: "🎨",
+  },
+  {
+    id: "safe-zone",
+    label: "Colour-Free Safe Zone",
+    colour: "bg-green-500/15 border-green-500/40",
+    top: "70%", left: "8%", width: "30%", height: "15%",
+    icon: "🟢",
+  },
+  {
+    id: "kids-zone",
+    label: "Children's Zone",
+    colour: "bg-yellow-500/15 border-yellow-500/40",
+    top: "70%", left: "55%", width: "30%", height: "15%",
+    icon: "👶",
+  },
+];
+
 export default function MapPage() {
   return (
     <Suspense fallback={<div className="px-4 py-8 text-center text-white/40">Loading map...</div>}>
@@ -30,6 +55,8 @@ function MapContent() {
   const searchParams = useSearchParams();
   const [selected, setSelected] = useState<MapMarker | null>(null);
   const [typeFilter, setTypeFilter] = useState<string>("all");
+  const [showZones, setShowZones] = useState(false);
+  const [showVolunteers, setShowVolunteers] = useState(false);
 
   // Handle deep link from schedule (?highlight=Main Stage)
   useEffect(() => {
@@ -48,6 +75,16 @@ function MapContent() {
   const filteredMarkers = typeFilter === "all"
     ? mapMarkers
     : mapMarkers.filter((m) => m.type === typeFilter);
+
+  // Get volunteers for the selected marker's zone
+  const zoneVolunteers = selected
+    ? volunteers.filter(
+        (v) =>
+          v.zone.toLowerCase() === selected.label.toLowerCase() ||
+          v.zone === "All Areas" ||
+          selected.label.toLowerCase().includes(v.zone.toLowerCase())
+      )
+    : [];
 
   return (
     <div>
@@ -73,6 +110,32 @@ function MapContent() {
           ))}
         </div>
 
+        {/* Overlay toggles */}
+        <div className="flex gap-2 pb-3">
+          <button
+            onClick={() => setShowZones(!showZones)}
+            className={cn(
+              "px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5",
+              showZones
+                ? "bg-holi-purple text-white"
+                : "bg-holi-surface text-white/50 hover:text-white"
+            )}
+          >
+            🎨 <span>Colour Zones</span>
+          </button>
+          <button
+            onClick={() => setShowVolunteers(!showVolunteers)}
+            className={cn(
+              "px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-colors flex items-center gap-1.5",
+              showVolunteers
+                ? "bg-holi-orange text-white"
+                : "bg-holi-surface text-white/50 hover:text-white"
+            )}
+          >
+            👥 <span>Volunteers</span>
+          </button>
+        </div>
+
         {/* Map container */}
         <div className="relative glass-card rounded-2xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
           {/* Background representing the park */}
@@ -92,6 +155,58 @@ function MapContent() {
               <span className="text-xs text-white/30 font-medium rotate-90">FOOD</span>
             </div>
           </div>
+
+          {/* Colour zone overlays */}
+          {showZones && colourZones.map((zone) => (
+            <div
+              key={zone.id}
+              className={cn(
+                "absolute rounded-xl border-2 border-dashed flex items-center justify-center z-5 transition-opacity",
+                zone.colour
+              )}
+              style={{ top: zone.top, left: zone.left, width: zone.width, height: zone.height }}
+            >
+              <div className="text-center">
+                <span className="text-lg block">{zone.icon}</span>
+                <span className="text-[10px] font-semibold text-white/60 block leading-tight">{zone.label}</span>
+              </div>
+            </div>
+          ))}
+
+          {/* Volunteer zone markers */}
+          {showVolunteers && (() => {
+            // Group volunteers by zone and position them
+            const zonePositions: Record<string, { x: number; y: number }> = {
+              "All Areas": { x: 50, y: 10 },
+              "Main Stage": { x: 50, y: 22 },
+              "Food Court": { x: 80, y: 50 },
+              "Info Desk": { x: 15, y: 15 },
+              "Car Park": { x: 85, y: 88 },
+              "Activity Zone": { x: 50, y: 52 },
+            };
+
+            const grouped = volunteers.reduce((acc, vol) => {
+              if (!acc[vol.zone]) acc[vol.zone] = [];
+              acc[vol.zone].push(vol);
+              return acc;
+            }, {} as Record<string, typeof volunteers>);
+
+            return Object.entries(grouped).map(([zone, vols]) => {
+              const pos = zonePositions[zone] || { x: 50, y: 50 };
+              return (
+                <div
+                  key={zone}
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20"
+                  style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                >
+                  <div className="bg-holi-orange/90 rounded-lg px-2 py-1 text-center min-w-[60px] shadow-lg">
+                    <span className="text-[10px] font-bold block text-white">👥 {vols.length}</span>
+                    <span className="text-[8px] text-white/80 block leading-tight">{zone}</span>
+                  </div>
+                </div>
+              );
+            });
+          })()}
 
           {/* Markers */}
           {filteredMarkers.map((marker) => (
@@ -133,6 +248,42 @@ function MapContent() {
                   View &rarr;
                 </Link>
               )}
+            </div>
+
+            {/* Show volunteers in this zone */}
+            {zoneVolunteers.length > 0 && (
+              <div className="mt-3 pt-3 border-t border-white/10">
+                <p className="text-xs text-white/40 mb-2">Volunteers in this area:</p>
+                <div className="flex flex-wrap gap-2">
+                  {zoneVolunteers.map((vol) => (
+                    <div key={vol.id} className="flex items-center gap-1.5 bg-white/5 rounded-full px-2.5 py-1">
+                      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-holi-pink to-holi-purple flex items-center justify-center text-[8px] font-bold">
+                        {vol.name.split(" ").map((n) => n[0]).join("")}
+                      </div>
+                      <span className="text-xs text-white/70">{vol.name}</span>
+                      <span className="text-[10px] text-holi-orange">({vol.role})</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Zone legend when zones are visible */}
+        {showZones && (
+          <div className="mt-3 glass-card rounded-2xl p-4">
+            <h3 className="font-semibold text-sm mb-2">Zone Guide</h3>
+            <div className="space-y-2">
+              {colourZones.map((zone) => (
+                <div key={zone.id} className="flex items-center gap-2 text-xs text-white/60">
+                  <span>{zone.icon}</span>
+                  <span className="font-medium">{zone.label}</span>
+                  {zone.id === "safe-zone" && <span className="text-green-400/60">— No colour throwing</span>}
+                  {zone.id === "kids-zone" && <span className="text-yellow-400/60">— Family-friendly area</span>}
+                  {zone.id === "colour-zone" && <span className="text-pink-400/60">— Active colour play!</span>}
+                </div>
+              ))}
             </div>
           </div>
         )}

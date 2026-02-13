@@ -5,6 +5,7 @@ import { QuickNav } from "@/components/home/QuickNav";
 import { InstallPrompt } from "@/components/home/InstallPrompt";
 import { WeatherWidget } from "@/components/home/WeatherWidget";
 import { HydrationReminder } from "@/components/home/HydrationReminder";
+import { HoliHighlights } from "@/components/home/HoliHighlights";
 import { SchedulePreview } from "@/components/home/SchedulePreview";
 import { AnnouncementsPreview } from "@/components/home/AnnouncementsPreview";
 import { FoodPreview } from "@/components/home/FoodPreview";
@@ -19,6 +20,7 @@ export default function HomePage() {
     <div className="space-y-2">
       <HeroBanner />
       <CountdownTimer />
+      <HoliHighlights />
       <NowUpNext />
       <WeatherWidget />
       <InstallPrompt />

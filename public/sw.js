@@ -1,4 +1,4 @@
-const CACHE_NAME = "holi-fest-v3";
+const CACHE_NAME = "holi-fest-v4";
 const STATIC_ASSETS = [
   "/",
   "/schedule",
@@ -39,6 +39,37 @@ self.addEventListener("activate", (event) => {
     })
   );
   self.clients.claim();
+});
+
+// Handle notification clicks — open the relevant page
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+
+  const tag = event.notification.tag || "";
+  let url = "/";
+
+  if (tag.startsWith("schedule-")) {
+    url = "/schedule";
+  } else if (tag === "hydration-reminder" || tag === "hydration-setup") {
+    url = "/";
+  } else if (tag.startsWith("announcement-")) {
+    url = "/announcements";
+  }
+
+  event.waitUntil(
+    clients.matchAll({ type: "window", includeUncontrolled: true }).then((windowClients) => {
+      // Focus existing window if available
+      for (const client of windowClients) {
+        if (client.url.includes(url) && "focus" in client) {
+          return client.focus();
+        }
+      }
+      // Otherwise open a new window
+      if (clients.openWindow) {
+        return clients.openWindow(url);
+      }
+    })
+  );
 });
 
 self.addEventListener("fetch", (event) => {
