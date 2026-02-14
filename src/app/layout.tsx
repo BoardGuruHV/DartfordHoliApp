@@ -70,6 +70,40 @@ export default function RootLayout({
       <head>
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              name: "Dartford Holi Festival 2025",
+              description: "A Celebration of Colours, Culture & Community. Join us for an afternoon of colour throwing, live music, dance performances, delicious food, and cultural celebrations.",
+              startDate: "2025-03-08T10:30:00+00:00",
+              endDate: "2025-03-08T14:30:00+00:00",
+              eventStatus: "https://schema.org/EventScheduled",
+              eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+              location: {
+                "@type": "Place",
+                name: "Open Air Theatre, Central Park",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Central Park, Dartford",
+                  addressLocality: "Dartford",
+                  addressRegion: "Kent",
+                  postalCode: "DA1 1EU",
+                  addressCountry: "GB",
+                },
+              },
+              image: [`${siteUrl}/og-image.png`],
+              organizer: {
+                "@type": "Organization",
+                name: "Dartford Holi Festival",
+                url: siteUrl,
+              },
+              isAccessibleForFree: true,
+            }),
+          }}
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
