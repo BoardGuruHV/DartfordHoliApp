@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { Footer } from "@/components/layout/Footer";
+import { SWUpdateNotification } from "@/components/layout/SWUpdateNotification";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -68,6 +69,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />
         <script
           type="application/ld+json"
@@ -116,8 +120,15 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} ${inter.variable} font-[family-name:var(--font-inter)] antialiased`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-holi-pink focus:text-white focus:font-semibold focus:outline-none"
+        >
+          Skip to main content
+        </a>
+        <SWUpdateNotification />
         <Header />
-        <main className="min-h-screen max-w-lg mx-auto">
+        <main id="main-content" className="min-h-screen max-w-lg mx-auto">
           {children}
         </main>
         <Footer />
