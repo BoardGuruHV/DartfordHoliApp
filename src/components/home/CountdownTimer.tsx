@@ -43,7 +43,7 @@ export function CountdownTimer() {
                 {block.value.toString().padStart(2, "0")}
               </span>
             </div>
-            <span className="text-xs text-white/50 mt-1 block">{block.label}</span>
+            <span className="text-xs text-white/60 mt-1 block">{block.label}</span>
           </div>
         ))}
       </div>

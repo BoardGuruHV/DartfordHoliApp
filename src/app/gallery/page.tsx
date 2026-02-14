@@ -6,69 +6,9 @@ import { Button } from "@/components/ui/Button";
 import { Modal } from "@/components/ui/Modal";
 import { ShareButton } from "@/components/ui/ShareButton";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { QRCodeSVG } from "qrcode.react";
 import { generateId, cn } from "@/lib/utils";
 import type { GalleryPhoto } from "@/types";
-
-// Simple QR code SVG generator for a URL
-function QRPlaceholder({ url }: { url: string }) {
-  return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="bg-white p-3 rounded-xl">
-        {/* SVG QR-like pattern (stylized placeholder) */}
-        <svg width="120" height="120" viewBox="0 0 120 120" className="block">
-          {/* Corner squares */}
-          <rect x="0" y="0" width="36" height="36" fill="black" />
-          <rect x="4" y="4" width="28" height="28" fill="white" />
-          <rect x="8" y="8" width="20" height="20" fill="black" />
-
-          <rect x="84" y="0" width="36" height="36" fill="black" />
-          <rect x="88" y="4" width="28" height="28" fill="white" />
-          <rect x="92" y="8" width="20" height="20" fill="black" />
-
-          <rect x="0" y="84" width="36" height="36" fill="black" />
-          <rect x="4" y="88" width="28" height="28" fill="white" />
-          <rect x="8" y="92" width="20" height="20" fill="black" />
-
-          {/* Center pattern */}
-          <rect x="44" y="0" width="8" height="8" fill="black" />
-          <rect x="56" y="4" width="4" height="4" fill="black" />
-          <rect x="68" y="0" width="8" height="8" fill="black" />
-
-          <rect x="44" y="44" width="32" height="32" rx="4" fill="#E91E63" />
-          <text x="60" y="65" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold">H</text>
-
-          <rect x="0" y="44" width="8" height="8" fill="black" />
-          <rect x="0" y="56" width="4" height="4" fill="black" />
-          <rect x="0" y="68" width="8" height="8" fill="black" />
-
-          <rect x="44" y="84" width="4" height="4" fill="black" />
-          <rect x="56" y="84" width="4" height="8" fill="black" />
-          <rect x="44" y="96" width="8" height="4" fill="black" />
-          <rect x="60" y="96" width="4" height="8" fill="black" />
-
-          <rect x="84" y="44" width="8" height="8" fill="black" />
-          <rect x="96" y="44" width="4" height="4" fill="black" />
-          <rect x="84" y="56" width="4" height="4" fill="black" />
-          <rect x="84" y="84" width="16" height="16" fill="black" />
-          <rect x="88" y="88" width="8" height="8" fill="white" />
-
-          <rect x="108" y="56" width="8" height="8" fill="black" />
-          <rect x="112" y="68" width="4" height="8" fill="black" />
-          <rect x="108" y="80" width="8" height="4" fill="black" />
-
-          <rect x="16" y="44" width="4" height="4" fill="black" />
-          <rect x="28" y="44" width="8" height="4" fill="black" />
-          <rect x="24" y="52" width="4" height="8" fill="black" />
-          <rect x="16" y="64" width="8" height="4" fill="black" />
-          <rect x="28" y="68" width="4" height="8" fill="black" />
-        </svg>
-      </div>
-      <div className="text-center">
-        <p className="text-xs text-white/40 break-all max-w-[200px]">{url}</p>
-      </div>
-    </div>
-  );
-}
 
 type Tab = "my-photos" | "community";
 
@@ -144,7 +84,7 @@ export default function GalleryPage() {
               <div className="glass-card rounded-xl p-4 text-center cursor-pointer hover:bg-white/5 transition-colors">
                 <span className="text-3xl block mb-2">📸</span>
                 <span className="text-sm font-medium">Tap to add photos</span>
-                <span className="text-xs text-white/50 block mt-1">Photos are stored on your device only</span>
+                <span className="text-xs text-white/60 block mt-1">Photos are stored on your device only</span>
               </div>
             </label>
 
@@ -166,7 +106,7 @@ export default function GalleryPage() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12 text-white/40">
+              <div className="text-center py-12 text-white/60">
                 <p className="text-4xl mb-3">🎨</p>
                 <p>No photos yet. Take some colourful snaps!</p>
               </div>
@@ -179,7 +119,7 @@ export default function GalleryPage() {
             {/* QR Code section */}
             <div className="glass-card rounded-xl p-6 text-center">
               <h3 className="font-semibold mb-2">Scan to Upload Photos</h3>
-              <p className="text-xs text-white/50 mb-4">
+              <p className="text-xs text-white/60 mb-4">
                 Share this QR code with friends at the festival so they can upload their photos too!
               </p>
 
@@ -197,7 +137,7 @@ export default function GalleryPage() {
                 <span className="text-2xl">🌍</span>
                 <div>
                   <h3 className="font-semibold text-sm">Community Photo Wall</h3>
-                  <p className="text-xs text-white/50 mt-1 leading-relaxed">
+                  <p className="text-xs text-white/60 mt-1 leading-relaxed">
                     A shared photo wall will be displayed at the festival venue near the Information Tent.
                     Upload your best shots and they may appear on the big screen!
                   </p>
@@ -210,7 +150,7 @@ export default function GalleryPage() {
                 <span className="text-2xl">📤</span>
                 <div>
                   <h3 className="font-semibold text-sm">Share Your Gallery</h3>
-                  <p className="text-xs text-white/50 mt-1 leading-relaxed">
+                  <p className="text-xs text-white/60 mt-1 leading-relaxed">
                     Tag your photos with <strong className="text-holi-pink">#DartfordHoli</strong> on Instagram and we&apos;ll feature the best ones!
                   </p>
                   <div className="mt-3">
@@ -230,8 +170,24 @@ export default function GalleryPage() {
       <Modal isOpen={showQR} onClose={() => setShowQR(false)}>
         <div className="text-center py-4">
           <h3 className="font-semibold text-lg mb-4">Scan to Open Gallery</h3>
-          <QRPlaceholder url={galleryUrl} />
-          <p className="text-xs text-white/40 mt-4">
+          <div className="flex flex-col items-center gap-3">
+            <div className="bg-white p-3 rounded-xl">
+              <QRCodeSVG
+                value={galleryUrl || "https://dartford-holi.vercel.app/gallery"}
+                size={160}
+                level="M"
+                fgColor="#1a0a2e"
+                imageSettings={{
+                  src: "",
+                  height: 0,
+                  width: 0,
+                  excavate: false,
+                }}
+              />
+            </div>
+            <p className="text-xs text-white/60 break-all max-w-[200px]">{galleryUrl}</p>
+          </div>
+          <p className="text-xs text-white/60 mt-4">
             Point your phone camera at this QR code to open the photo gallery
           </p>
           <Button
@@ -261,7 +217,7 @@ export default function GalleryPage() {
               className="w-full rounded-xl"
             />
             <div className="flex justify-between items-center mt-3">
-              <span className="text-xs text-white/50">
+              <span className="text-xs text-white/60">
                 {new Date(selectedPhoto.timestamp).toLocaleString()}
               </span>
               <div className="flex items-center gap-2">

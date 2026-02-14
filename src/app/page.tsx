@@ -1,19 +1,22 @@
+import dynamic from "next/dynamic";
 import { HeroBanner } from "@/components/home/HeroBanner";
 import { CountdownTimer } from "@/components/home/CountdownTimer";
 import { NowUpNext } from "@/components/home/NowUpNext";
 import { QuickNav } from "@/components/home/QuickNav";
 import { InstallPrompt } from "@/components/home/InstallPrompt";
-import { WeatherWidget } from "@/components/home/WeatherWidget";
-import { HydrationReminder } from "@/components/home/HydrationReminder";
-import { HoliHighlights } from "@/components/home/HoliHighlights";
-import { SchedulePreview } from "@/components/home/SchedulePreview";
-import { AnnouncementsPreview } from "@/components/home/AnnouncementsPreview";
-import { FoodPreview } from "@/components/home/FoodPreview";
-import { MapPreview } from "@/components/home/MapPreview";
-import { EmergencyPreview } from "@/components/home/EmergencyPreview";
-import { SponsorsPreview } from "@/components/home/SponsorsPreview";
 import { ShareButton } from "@/components/ui/ShareButton";
 import Link from "next/link";
+
+// Lazy load below-the-fold components for code splitting
+const WeatherWidget = dynamic(() => import("@/components/home/WeatherWidget").then(m => ({ default: m.WeatherWidget })));
+const HydrationReminder = dynamic(() => import("@/components/home/HydrationReminder").then(m => ({ default: m.HydrationReminder })));
+const HoliHighlights = dynamic(() => import("@/components/home/HoliHighlights").then(m => ({ default: m.HoliHighlights })));
+const SchedulePreview = dynamic(() => import("@/components/home/SchedulePreview").then(m => ({ default: m.SchedulePreview })));
+const AnnouncementsPreview = dynamic(() => import("@/components/home/AnnouncementsPreview").then(m => ({ default: m.AnnouncementsPreview })));
+const FoodPreview = dynamic(() => import("@/components/home/FoodPreview").then(m => ({ default: m.FoodPreview })));
+const MapPreview = dynamic(() => import("@/components/home/MapPreview").then(m => ({ default: m.MapPreview })));
+const EmergencyPreview = dynamic(() => import("@/components/home/EmergencyPreview").then(m => ({ default: m.EmergencyPreview })));
+const SponsorsPreview = dynamic(() => import("@/components/home/SponsorsPreview").then(m => ({ default: m.SponsorsPreview })));
 
 export default function HomePage() {
   return (

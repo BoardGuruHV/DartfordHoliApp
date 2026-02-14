@@ -67,10 +67,10 @@ export function NowUpNext() {
             </div>
             <h3 className="font-bold text-lg">{state.now.title}</h3>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-white/50 text-sm">{formatTime(state.now.time)} – {formatTime(state.now.endTime)}</span>
+              <span className="text-white/60 text-sm">{formatTime(state.now.time)} – {formatTime(state.now.endTime)}</span>
               <Badge className={CATEGORY_COLORS[state.now.category]}>{state.now.category}</Badge>
             </div>
-            <p className="text-white/40 text-xs mt-1">{state.now.location}</p>
+            <p className="text-white/60 text-xs mt-1">{state.now.location}</p>
           </div>
         )}
 
@@ -80,13 +80,13 @@ export function NowUpNext() {
               <div>
                 <span className="text-holi-orange text-xs font-bold uppercase tracking-wider">Up Next</span>
                 <h4 className="font-semibold mt-0.5">{state.next.title}</h4>
-                <span className="text-white/50 text-sm">{formatTime(state.next.time)}</span>
-                <span className="text-white/40 text-xs ml-2">{state.next.location}</span>
+                <span className="text-white/60 text-sm">{formatTime(state.next.time)}</span>
+                <span className="text-white/60 text-xs ml-2">{state.next.location}</span>
               </div>
               {state.minutesUntilNext > 0 && (
                 <div className="text-right shrink-0 ml-3">
                   <div className="text-2xl font-bold gradient-text">{state.minutesUntilNext}</div>
-                  <div className="text-white/40 text-xs">min</div>
+                  <div className="text-white/60 text-xs">min</div>
                 </div>
               )}
             </div>

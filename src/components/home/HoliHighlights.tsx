@@ -61,11 +61,11 @@ export function HoliHighlights() {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h2 className="text-lg font-bold gradient-text">My Holi Highlights</h2>
-              <p className="text-xs text-white/50 mt-0.5">Your festival recap</p>
+              <p className="text-xs text-white/60 mt-0.5">Your festival recap</p>
             </div>
             <button
               onClick={() => setDismissed(true)}
-              className="text-white/30 hover:text-white/60 text-sm p-2"
+              className="text-white/60 hover:text-white text-sm p-2"
               aria-label="Dismiss"
             >
               ✕
@@ -77,13 +77,13 @@ export function HoliHighlights() {
               <div key={stat.label} className="glass-card rounded-xl p-3 text-center">
                 <span className="text-2xl block">{stat.icon}</span>
                 <span className="text-xl font-bold block mt-1">{stat.value}</span>
-                <span className="text-[11px] text-white/50">{stat.label}</span>
+                <span className="text-[11px] text-white/60">{stat.label}</span>
               </div>
             ))}
           </div>
 
           {feedback.length > 0 && (
-            <p className="text-xs text-white/40 text-center mb-3">
+            <p className="text-xs text-white/60 text-center mb-3">
               🙏 You submitted feedback — thank you for helping us improve!
             </p>
           )}

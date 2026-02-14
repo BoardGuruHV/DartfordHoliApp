@@ -15,7 +15,7 @@ export function SectionWrapper({ title, href, className, children, id }: Section
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold font-[family-name:var(--font-heading)]">{title}</h2>
         {href && (
-          <Link href={href} className="text-holi-pink text-sm font-medium hover:underline">
+          <Link href={href} className="text-pink-300 text-sm font-medium hover:underline">
             View All &rarr;
           </Link>
         )}

@@ -19,7 +19,7 @@ export function AnnouncementsPreview() {
             )}
           >
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-white/50 text-xs">{formatTime(item.time)}</span>
+              <span className="text-white/60 text-xs">{formatTime(item.time)}</span>
               {item.priority !== "normal" && (
                 <span className={cn(
                   "text-xs font-medium px-1.5 py-0.5 rounded",
@@ -30,7 +30,7 @@ export function AnnouncementsPreview() {
               )}
             </div>
             <p className="font-semibold text-sm">{item.title}</p>
-            <p className="text-white/50 text-xs mt-0.5 line-clamp-2">{item.message}</p>
+            <p className="text-white/60 text-xs mt-0.5 line-clamp-2">{item.message}</p>
           </div>
         ))}
       </div>

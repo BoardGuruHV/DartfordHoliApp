@@ -24,7 +24,7 @@ export function Button({ variant = "primary", size = "md", className, children, 
   return (
     <button
       className={cn(
-        "rounded-xl font-semibold transition-all duration-200 active:scale-95 min-h-[48px] inline-flex items-center justify-center gap-2",
+        "rounded-xl font-semibold transition-all duration-200 active:scale-95 min-h-[48px] inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100",
         variants[variant],
         sizes[size],
         className

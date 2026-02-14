@@ -1,4 +1,4 @@
-const CACHE_NAME = "holi-fest-v4";
+const CACHE_NAME = "holi-fest-v5";
 const STATIC_ASSETS = [
   "/",
   "/schedule",

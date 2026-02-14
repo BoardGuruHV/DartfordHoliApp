@@ -95,15 +95,15 @@ export function WeatherWidget() {
                 <span className="text-2xl font-bold">{weather!.temperature}°C</span>
                 <span className="text-sm text-white/60">{info.label}</span>
               </div>
-              <div className="flex items-center gap-3 text-xs text-white/50 mt-0.5">
+              <div className="flex items-center gap-3 text-xs text-white/60 mt-0.5">
                 <span>💨 {weather!.windSpeed} km/h</span>
                 {isRainy && <span>🌧️ {weather!.precipitation} mm</span>}
               </div>
             </div>
           </div>
           <div className="text-right">
-            <span className="text-xs text-white/40 block">Dartford</span>
-            <span className="text-xs text-white/40">Live weather</span>
+            <span className="text-xs text-white/60 block">Dartford</span>
+            <span className="text-xs text-white/60">Live weather</span>
           </div>
         </div>
         {isRainy && (

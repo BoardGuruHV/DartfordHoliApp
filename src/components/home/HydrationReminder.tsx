@@ -90,8 +90,8 @@ export function HydrationReminder() {
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <span className="text-2xl shrink-0">💧</span>
             <div className="min-w-0">
-              <h3 className="font-semibold text-sm">Hydration Reminders</h3>
-              <p className="text-xs text-white/50 mt-0.5">
+              <p className="font-semibold text-sm">Hydration Reminders</p>
+              <p className="text-xs text-white/60 mt-0.5">
                 {enabled
                   ? "Active — reminding you every 30 mins"
                   : "Get notified to drink water during the festival"}
@@ -116,7 +116,7 @@ export function HydrationReminder() {
         {/* Water intake tracker */}
         <div className="mt-3 pt-3 border-t border-white/5">
           <div className="flex items-center justify-between">
-            <span className="text-xs text-white/50">Water intake today</span>
+            <span className="text-xs text-white/60">Water intake today</span>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setWaterCount((c) => Math.max(0, c - 1))}
@@ -143,7 +143,7 @@ export function HydrationReminder() {
               style={{ width: `${Math.min(100, (waterCount / 8) * 100)}%` }}
             />
           </div>
-          <p className="text-xs text-white/30 mt-1 text-right">{waterCount}/8 glasses</p>
+          <p className="text-xs text-white/60 mt-1 text-right">{waterCount}/8 glasses</p>
         </div>
       </Card>
     </div>

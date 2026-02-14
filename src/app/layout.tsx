@@ -18,9 +18,12 @@ const inter = Inter({
   display: "swap",
 });
 
+const siteUrl = "https://dartford-holi.vercel.app";
+
 export const metadata: Metadata = {
   title: "Dartford Holi Festival 2025",
   description: "Your pocket guide to the Dartford Holi Festival — schedule, map, food, safety & more! Sunday 8th March, Central Park, Dartford.",
+  metadataBase: new URL(siteUrl),
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -30,6 +33,23 @@ export const metadata: Metadata = {
     title: "Dartford Holi Festival 2025",
     description: "A Celebration of Colours, Culture & Community. Sunday 8th March, 10:30 AM – 2:30 PM, Central Park, Dartford.",
     type: "website",
+    url: siteUrl,
+    siteName: "Dartford Holi Festival",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dartford Holi Festival 2025 — A Celebration of Colours, Culture & Community",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dartford Holi Festival 2025",
+    description: "A Celebration of Colours, Culture & Community. Sunday 8th March, 10:30 AM – 2:30 PM, Central Park, Dartford.",
+    images: ["/og-image.png"],
   },
 };
 
